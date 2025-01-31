@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "category": "Vanilla",
+        "name": "Topped Vanilla Cupcakes",
+        "price": 180,
+        "image": "assets/images/toppedvanillacupcake.png",
+        "calories": 220
+    },
+    {
+        "id": 2,
+        "category": "Vanilla",
+        "name": "Vanilla Cupcakes",
+        "price": 150,
+        "image": "assets/images/vanillacupcake.png",
+        "calories": 200
+    },
+    {
+        "id": 3,
+        "category": "Vanilla",
+        "name": "2 Layered 6 in Vanilla Cake",
+        "price": 200,
+        "image": "assets/images/2layeredvanillacake.png",
+        "calories": 300
+    },
+    {
+        "id": 4,
+        "category": "Vanilla",
+        "name": "3 Layered 8 in Vanilla Cake",
+        "price": 350,
+        "image": "assets/images/3layeredvanillacake.png",
+        "calories": 600
+    },
+    {
+        "id": 5,
+        "category": "Vanilla",
+        "name": "Vanilla Sheet Cake",
+        "price": 400,
+        "image": "assets/images/vanillasheetcake.png",
+        "calories": 800
+    },
+    {
+        "id": 6,
+        "category": "Vanilla",
+        "name": "Vanilla Heart Cake",
+        "price": 600,
+        "image": "assets/images/vanillaheartcake.png",
+        "calories": 1200
+    },
+    {
+        "id": 7,
+        "category": "Chocolate",
+        "name": "Topped Chocolate Cupcakes",
+        "price": 180,
+        "image": "assets/images/toppedchocolatecupcake.png",
+        "calories": 220
+    },
+    {
+        "id": 8,
+        "category": "Chocolate",
+        "name": "Chocolate Cupcakes",
+        "price": 150,
+        "image": "assets/images/chocolatecupcake.png",
+        "calories": 200
+    },
+    {
+        "id": 9,
+        "category": "Chocolate",
+        "name": "2 Layered 6 in Chocolate Cake",
+        "price": 200,
+        "image": "assets/images/2layeredchocolatecake.png",
+        "calories": 300
+    },
+    {
+        "id": 10,
+        "category": "Chocolate",
+        "name": "3 Layered 8 in Chocolate Cake",
+        "price": 350,
+        "image": "assets/images/3layeredchocolatecake.png",
+        "calories": 600
+    },
+    {
+        "id": 11,
+        "category": "Chocolate",
+        "name": "Chocolate Sheet Cake",
+        "price": 400,
+        "image": "assets/images/chocolatesheetcake.png",
+        "calories": 800
+    },
+    {
+        "id": 12,
+        "category": "Chocolate",
+        "name": "Chocolate Heart Cake",
+        "price": 600,
+        "image": "assets/images/chocolateheartcake.png",
+        "calories": 1200
+    },
+    {
+        "id": 13,
+        "category": "Fruit",
+        "name": "Topped Fruit Cupcakes",
+        "price": 180,
+        "image": "assets/images/toppedfruitcupcake.png",
+        "calories": 220
+    },
+    {
+        "id": 14,
+        "category": "Fruit",
+        "name": "Fruit Cupcakes",
+        "price": 150,
+        "image": "assets/images/fruitcupcake.png",
+        "calories": 200
+    },
+    {
+        "id": 15,
+        "category": "Fruit",
+        "name": "2 Layered 6 in Fruit Cake",
+        "price": 200,
+        "image": "assets/images/2layeredfruitcake.png",
+        "calories": 300
+    },
+    {
+        "id": 16,
+        "category": "Fruit",
+        "name": "3 Layered 8 in Fruit Cake",
+        "price": 350,
+        "image": "assets/images/3layeredfruitcake.png",
+        "calories": 600
+    },
+    {
+        "id": 17,
+        "category": "Fruit",
+        "name": "Fruit Sheet Cake",
+        "price": 400,
+        "image": "assets/images/fruitsheetcake.png",
+        "calories": 800
+    },
+    {
+        "id": 18,
+        "category": "Fruit",
+        "name": "Fruit Heart Cake",
+        "price": 600,
+        "image": "assets/images/fruitheartcake.png",
+        "calories": 1200
+    },
+    {
+        "id": 19,
+        "category": "Honeybun",
+        "name": "Topped Honeybun Cupcakes",
+        "price": 180,
+        "image": "assets/images/toppedhoneybuncupcake.png",
+        "calories": 220
+    },
+    {
+        "id": 20,
+        "category": "Honeybun",
+        "name": "Honeybun Cupcakes",
+        "price": 150,
+        "image": "assets/images/honeybuncupcake.png",
+        "calories": 200
+    },
+    {
+        "id": 21,
+        "category": "Honeybun",
+        "name": "2 Layered 6 in Honeybun Cake",
+        "price": 200,
+        "image": "assets/images/2layeredhoneybuncake.png",
+        "calories": 300
+    },
+    {
+        "id": 22,
+        "category": "Honeybun",
+        "name": "3 Layered 8 in Honeybun Cake",
+        "price": 350,
+        "image": "assets/images/3layeredhoneybuncake.png",
+        "calories": 600
+    },
+    {
+        "id": 23,
+        "category": "Honeybun",
+        "name": "Honeybun Sheet Cake",
+        "price": 400,
+        "image": "assets/images/honeybunsheetcake.png",
+        "calories": 800
+    },
+    {
+        "id": 24,
+        "category": "Honeybun",
+        "name": "Honeybun Heart Cake",
+        "price": 600,
+        "image": "assets/images/honeybunheartcake.png",
+        "calories": 1200
+    },
+    {
+        "id": 25,
+        "category": "Chocolate",
+        "name": "Chocolate Chip Cookies",
+        "price": 2000,
+        "image": "assets/images/cookies.png",
+        "calories": 1200
+    }
+]
