@@ -1,5 +1,5 @@
 const connection = require('./db');
-
+//This is all the menu items with the Name, caloires, price,image ,and category all in to a list of menu items
 const menuItems = [
     { category: "Vanilla", name: "Topped Vanilla Cupcakes", price: 180, image: "assets/images/toppedvanillacupcake.png", calories: 220 },
     { category: "Vanilla", name: "Vanilla Cupcakes", price: 150, image: "assets/images/vanillacupcake.png", calories: 200 },
@@ -27,7 +27,7 @@ const menuItems = [
     { category: "Honeybun", name: "Honeybun Heart Cake", price: 600, image: "assets/images/honeybunheartcake.png", calories: 1200 },
     { category: "Chocolate", name: "Chocolate Chip Cookies", price: 2000, image: "assets/images/cookies.png", calories: 1200 }
 ];
-
+// this funciton insertsions the data using a for loop for every item in the list, connecting to the database in sql.
 const insertData = async () => {
     try {
         // Insert menu items into the database
