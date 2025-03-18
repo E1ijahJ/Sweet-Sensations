@@ -3,7 +3,7 @@ Bakery based website
 
 Just to make sure yall got access to it jus sign ya names
 1.
-2.
+2. Khiree
 3. Nyrek
 4. Jaylen
 5. Elijah
