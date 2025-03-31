@@ -27,9 +27,25 @@ const menuItems = [
     { category: "Honeybun", name: "Honeybun Heart Cake", price: 600, image: "assets/images/honeybunheartcake.png", calories: 1200 },
     { category: "Chocolate", name: "Chocolate Chip Cookies", price: 2000, image: "assets/images/cookies.png", calories: 1200 }
 ];
+const mockContacts = [
+    { customer_id: 1, customer_Name: "John Doe", email: "john@example.com", phone_number: "555-1234", subject: "Feedback", message: "Loved the cupcakes!" },
+    { customer_id: 2, customer_Name: "Jane Smith", email: "jane@example.com", phone_number: "555-5678", subject: "Order Inquiry", message: "Great honeybun cake!" }
+];
+
+const mockReviews = [
+        { customer_Name: "John Doe", review: "The cupcakes are amazing! Will definitely order again.",customer_id: 1 },
+        { customer_Name: "Jane Smith", review: "Absolutely love the honeybun cake. Great customer service too!", customer_id:2 },
+    
+];
 // this funciton insertsions the data using a for loop for every item in the list, connecting to the database in sql.
 const insertData = async () => {
     try {
+        for (const contact of mockContacts) {
+            await connection.promise().query(
+                `INSERT INTO Contact (Customer_id, Customer_Name, Email, Phone_Number, Subject, Message) VALUES (?, ?, ?, ?, ?, ?)`,
+                [contact.customer_id, contact.customer_Name, contact.email, contact.phone_number, contact.subject, contact.message]
+            );
+        }
         // Insert menu items into the database
         for (const item of menuItems) {
             await connection.promise().query(`
@@ -39,6 +55,12 @@ const insertData = async () => {
         }
 
         console.log(" Sample menu data inserted successfully!");
+        for (const review of mockReviews) {
+            await connection.promise().query(
+                `INSERT INTO Reviews (Customer_Name, Review, Customer_id) VALUES (?, ?, ?)`,
+                [review.customer_Name, review.review, review.customer_id]
+            );
+        }
     } catch (error) {
         console.error(" Error inserting data:", error);
     } finally {
