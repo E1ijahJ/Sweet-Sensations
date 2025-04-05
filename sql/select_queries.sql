@@ -24,3 +24,15 @@ SELECT Customer_Name, COUNT(*) AS review_count
 FROM Reviews
 GROUP BY Customer_Name
 ORDER BY review_count DESC;
+
+
+-- Purpose: Join reviews with customer contact info to see who wrote what
+SELECT 
+    r.Review_id,
+    r.Customer_Name,
+    r.Review,
+    c.Email,
+    c.Phone_Number
+FROM Reviews r
+JOIN Contact c ON r.Customer_id = c.Customer_id
+ORDER BY r.Review_id;
