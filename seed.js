@@ -29,13 +29,18 @@ const menuItems = [
 ];
 const mockContacts = [
     { customer_id: 1, customer_Name: "John Doe", email: "john@example.com", phone_number: "555-1234", subject: "Feedback", message: "Loved the cupcakes!" },
-    { customer_id: 2, customer_Name: "Jane Smith", email: "jane@example.com", phone_number: "555-5678", subject: "Order Inquiry", message: "Great honeybun cake!" }
+    { customer_id: 2, customer_Name: "Jane Smith", email: "jane@example.com", phone_number: "555-5678", subject: "Order Inquiry", message: "Great honeybun cake!" },
+    { customer_id: 3, customer_Name: "Michael Brown", email: "michael@example.com", phone_number: "555-9999", subject: "Support", message: "Had an issue with an order." },
+    { customer_id: 4, customer_Name: "Emily White", email: "emily@example.com", phone_number: "555-4321", subject: "Suggestion", message: "Would love a tomato option!" },
+    { customer_id: 5, customer_Name: "Daniel Green", email: "daniel@example.com", phone_number: "555-8888", subject: "Question", message: "Do you deliver to my area?" }
 ];
 
 const mockReviews = [
-        { customer_Name: "John Doe", review: "The cupcakes are amazing! Will definitely order again.",customer_id: 1 },
-        { customer_Name: "Jane Smith", review: "Absolutely love the honeybun cake. Great customer service too!", customer_id:2 },
-    
+    { customer_Name: "John Doe", review: "The cupcakes are amazing! Will definitely order again.", customer_id: 1 },
+    { customer_Name: "Jane Smith", review: "Absolutely love the honeybun cake! Great customer service too!", customer_id: 2 },
+    { customer_Name: "Michael Brown", review: "Delivery was fast and the cake was fresh.", customer_id: 3 },
+    { customer_Name: "Emily White", review: "Beautiful packaging and the flavors were spot on.", customer_id: 4 },
+    { customer_Name: "Daniel Green", review: "Portions are great — shared a whole heart cake with my fam.", customer_id: 5 }
 ];
 // this funciton insertsions the data using a for loop for every item in the list, connecting to the database in sql.
 const insertData = async () => {
