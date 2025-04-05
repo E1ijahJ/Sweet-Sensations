@@ -1,4 +1,4 @@
--- Drop tables in reverse foreign key order to avoid constraint errors
+-- Drop tables in reverse foreign key order to avoid constraint errors this is for testing to make sure tables are created
 DROP TABLE IF EXISTS Order_Items;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Reviews;
