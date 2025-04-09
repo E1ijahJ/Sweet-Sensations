@@ -24,12 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewTextInput = document.getElementById('review-text');
 
     // Mock reviews
-    const mockReviews = [
-        { name: "John Doe", text: "The cupcakes are amazing! Will definitely order again." },
-        { name: "Jane Smith", text: "Absolutely love the honeybun cake. Great customer service too!" },
-    ];
-
-    // Function to render reviews
     const renderReviews = (reviews) => {
         reviewsList.innerHTML = ''; // Clear the reviews list
         reviews.forEach(review => {
@@ -37,33 +31,58 @@ document.addEventListener('DOMContentLoaded', () => {
             reviewDiv.className = 'review card mb-3 shadow-sm';
             reviewDiv.innerHTML = `
                 <div class="card-body">
-                    <h5 class="card-title text-primary">${review.name}</h5>
-                    <p class="card-text text-muted">${review.text}</p>
+                    <h5 class="card-title text-primary">${review.Customer_Name}</h5>
+                    <p class="card-text text-muted">${review.Review}</p>
                 </div>
             `;
             reviewsList.appendChild(reviewDiv);
         });
     };
 
-    // Submit event listener for the form
-    reviewForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    const fetchReviews = async () => {
+        try {
+            const response = await fetch('http://localhost:5005/api/reviews');
+            const data = await response.json();
+            renderReviews(data);
+        } catch (err) {
+            console.error("Error loading reviews:", err);
+        }
+    };
 
+    // Submit event listener for the form
+    reviewForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+    
         const name = reviewNameInput.value.trim();
         const text = reviewTextInput.value.trim();
-
-        if (name && text) {
-            mockReviews.push({ name, text }); // Add new review to the mockReviews array
-            renderReviews(mockReviews); // Re-render reviews
-            reviewNameInput.value = ''; // Clear form inputs
-            reviewTextInput.value = '';
+        const customerId = document.getElementById('review-customer-id').value.trim();
+    
+        if (name && text && customerId) {
+            try {
+                await fetch('http://localhost:5005/api/reviews', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        Customer_Name: name,
+                        Review: text,
+                        Customer_id: parseInt(customerId)
+                    })
+                });
+    
+                reviewNameInput.value = '';
+                reviewTextInput.value = '';
+                document.getElementById('review-customer-id').value = '';
+    
+                // Reload reviews from database
+                fetchReviews();
+            } catch (err) {
+                console.error('Error submitting review:', err);
+                alert("Failed to submit review");
+            }
         }
     });
-
-    // Initial rendering of reviews
-    renderReviews(mockReviews);
+    fetchReviews();
 });
-
 let listProductHTML = document.querySelector('.listProduct');
 let listCartHTML = document.querySelector('.listCart');
 let iconCart = document.querySelector('.icon-cart');

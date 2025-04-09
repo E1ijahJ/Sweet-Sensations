@@ -4,7 +4,7 @@ const cors = require('cors');
 const connection = require('./db'); // MySQL connection
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5005;
 
 app.use(cors());              // Allow cross-origin requests
 app.use(express.json());      // Parse JSON bodies
