@@ -94,7 +94,7 @@ let cart = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     // Load products from the JSON file
-    fetch('product.json') // Ensure the correct path to product.json
+    fetch('http://localhost:5005/api/menu') // Ensure the correct path to product.json
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -127,17 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 productList.innerHTML = ''; // Clear the product list
 
                 products.forEach(product => {
-                    if (filter === 'all' || product.category === filter) {
+                    if (filter === 'all' || product.Category === filter) {
                         const productDiv = document.createElement('div');
                         productDiv.className = 'product card mb-4 shadow-sm';
-                        productDiv.setAttribute('data-category', product.category);
+                        productDiv.setAttribute('data-category', product.Category);
                         productDiv.innerHTML = `
-                            <img src="${product.image.replace('{category}', product.category.toLowerCase())}" alt="${product.name}" class="card-img-top">
+                            <img src="${product.Image.replace('{category}', product.Category.toLowerCase())}" alt="${product.Nameame}" class="card-img-top">
                             <div class="card-body">
-                                <h5 class="card-title">${product.name}</h5>
-                                <p class="card-text">Price: $${product.price}</p>
-                                <p class="card-text">Calories: ${product.calories} kcal</p>
-                                <button class="btn btn-primary add-to-cart" data-id="${product.id}">Add to Cart</button>
+                                <h5 class="card-title">${product.Name}</h5>
+                                <p class="card-text">Price: $${product.Price}</p>
+                                <p class="card-text">Calories: ${product.Calories} kcal</p>
+                                <button class="btn btn-primary add-to-cart" data-id="${product.itemid}">Add to Cart</button>
                             </div>
                         `;
                         productList.appendChild(productDiv);
@@ -167,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cartItem = document.createElement('div');
                     cartItem.className = 'cart-item d-flex justify-content-between align-items-center mb-3';
                     cartItem.innerHTML = `
-                        <span>${item.name} - $${item.price} x ${item.quantity}</span>
+                        <span>${item.Name} - $${item.Price} x ${item.quantity}</span>
                         <div>
-                            <button class="btn btn-sm btn-secondary decrement" data-id="${item.id}">-</button>
-                            <button class="btn btn-sm btn-secondary increment" data-id="${item.id}">+</button>
+                            <button class="btn btn-sm btn-secondary decrement" data-id="${item.itemid}">-</button>
+                            <button class="btn btn-sm btn-secondary increment" data-id="${item.itemid}">+</button>
                         </div>
                     `;
                     cartList.appendChild(cartItem);
@@ -301,12 +301,12 @@ closeCart.addEventListener('click', () => {
         {
             products.forEach(product => {
                 let newProduct = document.createElement('div');
-                newProduct.dataset.id = product.id;
+                newProduct.dataset.id = product.itemid;
                 newProduct.classList.add('item');
                 newProduct.innerHTML = 
-                `<img src="${product.image}" alt="">
-                <h2>${product.name}</h2>
-                <div class="price">$${product.price}</div>
+                `<img src="${product.Image}" alt="">
+                <h2>${product.Name}</h2>
+                <div class="price">$${product.Price}</div>
                 <button class="addCart">Add To Cart</button>`;
                 listProductHTML.appendChild(newProduct);
             });
@@ -355,12 +355,12 @@ const addCartToHTML = () => {
             listCartHTML.appendChild(newItem);
             newItem.innerHTML = `
             <div class="image">
-                <img src="${info.image}">
+                <img src="${info.Image}">
             </div>
             <div class="name">
-                ${info.name}
+                ${info.Name}
             </div>
-            <div class="totalPrice">$${info.price * item.quantity}</div>
+            <div class="totalPrice">$${info.Price * item.quantity}</div>
             <div class="quantity">
                 <button class="minus">-</button>
                 <span>${item.quantity}</span>
@@ -408,7 +408,7 @@ const changeQuantityCart = (product_id, type) => {
 
 const initApp = () => {
     // get data product
-    fetch('product.json')
+    fetch('http://localhost:5005/api/menu')
     .then(response => response.json())
     .then(data => {
         products = data;
@@ -419,6 +419,7 @@ const initApp = () => {
             cart = JSON.parse(localStorage.getItem('cart'));
             addCartToHTML();
         }
+        console.log("Products fetched:", products);
     })
 }
 initApp();
