@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Reviews;
 DROP TABLE IF EXISTS Contact;
 DROP TABLE IF EXISTS Menu;
+DROP TABLE IF EXISTS Cart; 
 
 -- Create Menu table
 CREATE TABLE Menu (
@@ -45,10 +46,19 @@ CREATE TABLE Orders (
 -- Create Order_Items table
 CREATE TABLE Order_Items (
     Order_item_id INT AUTO_INCREMENT PRIMARY KEY,
-    OrderID INT,
+    OrderID INT, 
     itemid INT,
     Quantity INT,
     Subtotal DECIMAL(10, 2),
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID) ON DELETE CASCADE,
     FOREIGN KEY (itemid) REFERENCES Menu(itemid) ON DELETE CASCADE
+);
+
+-- Create Cart table
+Create Table Cart(
+    Cart_id INT AUTO_INCREMENT PRIMARY KEY,
+    Quantity INT NULL DEFAULT NULL,
+    Itemid INT VARCHAR(100) NULL DEFAULT NULL, 
+    CustomerID INT,
+    Subtotal DECIMAL(10, 2), 
 );
