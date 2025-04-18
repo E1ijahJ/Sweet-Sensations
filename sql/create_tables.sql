@@ -56,9 +56,12 @@ CREATE TABLE Order_Items (
 
 -- Create Cart table
 Create Table Cart(
-    Cart_id INT AUTO_INCREMENT PRIMARY KEY,
-    Quantity INT NULL DEFAULT NULL,
-    Itemid INT VARCHAR(100) NULL DEFAULT NULL, 
-    CustomerID INT,
-    Subtotal DECIMAL(10, 2), 
+    Cart_id INT PRIMARY KEY,
+    cart_id INT,
+    product_id INT,
+    quantity INT,
+    FOREIGN KEY (cart_id) REFERENCES carts(id),
+    FOREIGN KEY (product_id) REFERENCES products(id) 
 );
+
+
